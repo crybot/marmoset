@@ -3,10 +3,9 @@
   <h2>Users list</h2>
   <% @user_list.each do |user| %>
     <p>
-    <%= user.username %>
-    <%= user.email %>
-    <%= user.name %>
+    <%= user.name%>
     <%= user.surname %>
+    <%= user.email %>
     </p>
   <% end %>
   <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>

@@ -117,3 +117,25 @@ footer ul li {
   @include box_sizing;
 }
 
+/* forms */
+
+input, textarea, select, .uneditable-input {
+  width: 100%;
+  margin-bottom: 25px;
+  @include box_sizing;
+}
+
+input[type=submit] {
+  width: auto;
+  height: 40px;
+}
+input {
+  clear: both;
+}
+label {
+  float: left;
+}
+
+.form-group {
+  margin: auto;
+}
