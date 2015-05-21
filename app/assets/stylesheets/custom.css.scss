@@ -126,16 +126,31 @@ input, textarea, select, .uneditable-input {
 }
 
 input[type=submit] {
-  width: auto;
-  height: 40px;
+  width: 40%;
+  height: 45px;
+  weight: bold;
 }
+
 input {
   clear: both;
 }
+
 label {
   float: left;
 }
 
 .form-group {
   margin: auto;
+}
+
+  ul {
+    text-align: left;
+    color: #A94442;
+  }
+
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
+  }
 }
