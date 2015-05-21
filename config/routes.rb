@@ -1,8 +1,19 @@
 Rails.application.routes.draw do
+
+  #users 
   get 'users/index'
   get 'users/new'
   get 'signup' => 'users#new'
+  
+  #sessions
+  get 'login' => 'sessions#new'
+  post 'login' => 'sessions#create'
+  delete 'logout' => 'sessions#destroy'
+
+  #index root
   root to: 'users#index'
+
+  #resources
   resources :users # or resource :user for singular resources
 
   # The priority is based upon order of creation: first created -> highest priority.

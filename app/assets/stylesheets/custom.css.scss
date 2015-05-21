@@ -31,6 +31,10 @@ textarea {
   margin-bottom: 10px;
 }
 
+.upmargin {
+  margin-top: 20px;
+}
+
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
@@ -143,10 +147,10 @@ label {
   margin: auto;
 }
 
-  ul {
-    text-align: left;
-    color: #A94442;
-  }
+ul {
+  text-align: left;
+  color: #A94442;
+}
 
 .field_with_errors {
   @extend .has-error;
