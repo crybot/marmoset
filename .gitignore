@@ -34,3 +34,5 @@ bower.json
 # Ignore pow environment settings
 .powenv
 
+# Ignore vim buffered swap files
+.swp
