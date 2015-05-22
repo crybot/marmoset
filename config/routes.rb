@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
 
+  get 'classes/index'
+
+  get 'classes/show'
+
+  get 'classes/new'
+
+  get 'classes/create'
+
+  get 'classes/destroy'
+
   #users 
   get 'users/index'
   get 'users/new'

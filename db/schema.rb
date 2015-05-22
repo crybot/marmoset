@@ -11,15 +11,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150520171232) do
+ActiveRecord::Schema.define(version: 20150522222506) do
 
-  create_table "users", force: :cascade do |t|
-    t.string   "password"
-    t.string   "email"
+  create_table "classrooms", force: :cascade do |t|
     t.text     "name"
-    t.text     "surname"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "classrooms_users", id: false, force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "classroom_id"
+  end
+
+  add_index "classrooms_users", ["classroom_id"], name: "index_classrooms_users_on_classroom_id"
+  add_index "classrooms_users", ["user_id"], name: "index_classrooms_users_on_user_id"
+
+  create_table "users", force: :cascade do |t|
+    t.text     "name"
+    t.text     "surname"
+    t.string   "email"
+    t.string   "password"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users_classrooms", id: false, force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "classroom_id"
+  end
+
+  add_index "users_classrooms", ["classroom_id"], name: "index_users_classrooms_on_classroom_id"
+  add_index "users_classrooms", ["user_id"], name: "index_users_classrooms_on_user_id"
 
 end
