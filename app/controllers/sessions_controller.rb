@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    logout
+    logout if logged?
     redirect_to root_path
   end
 end
