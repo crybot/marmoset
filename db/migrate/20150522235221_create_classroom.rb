@@ -1,6 +1,5 @@
-class CreateJoinUsersClassrooms < ActiveRecord::Migration
+class CreateClassroom < ActiveRecord::Migration
   def change
-
     create_table :classrooms  do |t|
       t.text :name
 
@@ -11,6 +10,5 @@ class CreateJoinUsersClassrooms < ActiveRecord::Migration
       t.belongs_to :user, index: true
       t.belongs_to :classroom, index: true
     end
-
   end
 end
