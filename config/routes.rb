@@ -24,7 +24,7 @@ Rails.application.routes.draw do
   root to: 'users#index'
 
   #resources
-  resources :users # or resource :user for singular resources
+  resources :users, :classrooms # or resource :user for singular resources
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
