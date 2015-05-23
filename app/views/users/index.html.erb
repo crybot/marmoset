@@ -1,13 +1,12 @@
+<%= render "shared/slider" %>
 <div class="center jumbotron">
+
+  <br>
+  <br>
   <h1> Welcome to Marmoset online App </h1>
-  <h2>Users list</h2>
-  <% @user_list.each do |user| %>
-    <p>
-    <%= user.name%>
-    <%= user.surname %>
-    <%= user.email %>
-    </p>
-  <% end %>
+  <br>
+  <br>
+
   <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
 </div>
 

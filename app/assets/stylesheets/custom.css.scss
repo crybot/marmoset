@@ -13,6 +13,7 @@ $gray-medium-light: #eaeaea;
 
 body {
   padding-top: 60px;
+  background-color: #ecf0f1;
 }
 
 section {
@@ -159,9 +160,6 @@ ul {
   }
 }
 
-body {
-  background-color: #ecf0f1;
-}
 .class {
   display: inline-block;
   width: 160px;
@@ -170,8 +168,15 @@ body {
   border-radius: 4%;
   margin: 40px 40px 0 40px;
 
-    font-weight: bold;
-    text-shadow: 0px 2px 3px #34495e;
-    color: white;
+  font-weight: bold;
+  text-shadow: 0px 2px 3px #34495e;
+  color: white;
+}
 
+#myCarousel {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  opacity: 0.9;
+  text-shadow: 0px 1px 1px #2c3e50;
 }

@@ -10,7 +10,9 @@
   <body>
     <header class="navbar navbar-fixed-top navbar-inverse">
       <div class="container">
-	<%= link_to "Marmoset", root_path, id: "logo" %>
+	<%= link_to root_path, id: "logo" do  %>
+	  <span class="glyphicon glyphicon-star"></span> Marmoset
+	<% end %>
 
 	<nav>
 	  <ul class="nav navbar-nav navbar-right">
