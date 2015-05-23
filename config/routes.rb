@@ -1,12 +1,22 @@
 Rails.application.routes.draw do
 
+  get 'classrooms/index'
+
+  get 'classrooms/show'
+
+  get 'classrooms/new'
+
+  get 'classrooms/create'
+
+  get 'classrooms/destroy'
+
   get 'classes/index'
 
   get 'classes/show'
 
   get 'classes/new'
+  post 'classes' => 'classrooms#create'
 
-  get 'classes/create'
 
   get 'classes/destroy'
 

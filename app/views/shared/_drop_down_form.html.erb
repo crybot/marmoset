@@ -1,0 +1,18 @@
+<div class="dropdown" id="menuLogin">
+  <a class="btn btn-lg btn-primary dropdown-toggle" id="newClass" href="#" data-toggle="dropdown" id="navLogin">
+    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+  </a>
+  <div class="dropdown-menu" style="padding:40px;">
+
+    <% @classroom = Classroom.new %>
+    <%= form_for @classroom, :html => {:class => "form-horizontal center"}  do |f| %>
+      <div class="form-group">
+	<%= f.text_field :name, class: "form-control", placeholder: "Class Name" %>
+      </div>
+
+      <%= f.submit "Create Class", class: "btn btn-lg btn-primary", style: "width: auto" %>
+    <% end %>
+
+  </div>
+</div>
+
