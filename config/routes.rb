@@ -1,35 +1,12 @@
 Rails.application.routes.draw do
-
-  get 'documents/index'
-
+  
+  #documents
   get 'documents/show'
-
   get 'documents/new'
 
-  get 'documents/create'
-
-  get 'documents/destroy'
-
-  get 'classrooms/index'
-
+  #classrooms
   get 'classrooms/show'
-
-  get 'classrooms/new'
-
-  get 'classrooms/create'
-
-  get 'classrooms/destroy'
-
-  get 'classes/index'
-
-  get 'classes/show'
-
-  get 'classes/new'
-  post 'classes' => 'classrooms#create'
-
-
-  get 'classes/destroy'
-
+  
   #users 
   get 'users/index'
   get 'users/new'

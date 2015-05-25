@@ -4,6 +4,7 @@ class ClassroomsController < ApplicationController
 
   def show
     @classroom = Classroom.find(params[:id])
+    save_classroom(@classroom)
   end
 
   def new
@@ -13,11 +14,11 @@ class ClassroomsController < ApplicationController
     @classroom = Classroom.new(classroom_params)
     if @classroom.save
       current_user.classrooms << @classroom
-      redirect_to current_user
+      flash[:success] = 'Classroom created sucessfully!'
     else
       flash[:danger] = 'Classroom could not be created.'
-      redirect_to current_user
     end
+    redirect_to current_user
   end
 
   def destroy
