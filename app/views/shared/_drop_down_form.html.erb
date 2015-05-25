@@ -4,7 +4,6 @@
   </a>
   <div class="dropdown-menu" style="padding:40px;">
 
-    <% @classroom = Classroom.new %>
     <%= form_for @classroom, :html => {:class => "form-horizontal center"}  do |f| %>
       <div class="form-group">
 	<%= f.text_field :name, class: "form-control", placeholder: "Class Name" %>

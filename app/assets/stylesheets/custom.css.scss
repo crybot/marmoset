@@ -165,13 +165,12 @@ ul {
 }
 
 .class {
+  box-shadow: 0px 1px 4px #888888;
   display: inline-block;
   width: 160px;
   height: 220px;
-  border: 1px solid none;
-  border-radius: 4%;
+  border-radius: 1%;
   margin: 40px 40px 0 40px;
-
   font-weight: bold;
   text-shadow: 0px 2px 3px #34495e;
   color: white;
@@ -206,3 +205,39 @@ ul {
 #menuLogin {
   float: right;
 }
+
+.document {
+  margin-top: 40px;
+  box-shadow: 0px 1px 4px #888888;
+  padding: 25px 100px 25px 100px;
+  width: 72%;
+  height: 2000px;
+  background-color: white;
+  color: #34495E;
+  p {
+    text-align: left;
+    font-size: 18px;
+  }
+}
+
+.navbar-inverse .navbar-nav > li > a {
+  font-weight: bold;
+  color: white;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover {
+  color: black;
+}
+
+.navbar-inverse {
+  background-color: #166590;
+  color: white;
+}
+
+.carousel-inner > .item {
+  -webkit-transition: 0.9s ease-in-out left;
+  -moz-transition: 0.9s ease-in-out left;
+  -o-transition: 0.9s ease-in-out left;
+  transition: 0.9s ease-in-out left;
+}
+

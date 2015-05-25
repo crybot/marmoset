@@ -1,22 +1,20 @@
 class DocumentsController < ApplicationController
   def show
+    @document = Document.find(params[:id])
   end
 
   def new
-    @document = Document.new
+    @document = current_classroom.documents.build
   end
 
   def create
-    classroom = current_classroom
-    parameters = document_params
-    parameters[:author_email] = current_user.email
-    @document = classroom.documents.build(document_params)
+    @document = current_classroom.documents.build(document_params)
     if @document.save
-      flash[:success] = 'Document created successfully!'
+      flash[:success] = 'Document successfully created!'
     else
       flash[:danger] = 'Document could not be created.'
     end
-    redirect_to classroom
+    redirect_to current_classroom
   end
 
   def destroy

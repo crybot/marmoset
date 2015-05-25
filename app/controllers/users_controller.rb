@@ -9,6 +9,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @classroom = @user.classrooms.build
   end
 
   def create

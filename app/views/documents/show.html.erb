@@ -1,2 +1,6 @@
-<h1>Documents#show</h1>
-<p>Find me in app/views/documents/show.html.erb</p>
+<div class="container document">
+  <h1> <%= @document.name %> </h1>
+  <p>
+  <%= simple_format @document.content %>
+  </p>
+</div>
