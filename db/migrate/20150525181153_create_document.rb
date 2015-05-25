@@ -1,4 +1,4 @@
-class CreateDocumentsAndJoinTable < ActiveRecord::Migration
+class CreateDocument < ActiveRecord::Migration
   def change
     create_table :documents do |t|
       t.belongs_to :classroom, index: true
