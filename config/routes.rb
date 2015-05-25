@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
 
+  get 'documents/index'
+
+  get 'documents/show'
+
+  get 'documents/new'
+
+  get 'documents/create'
+
+  get 'documents/destroy'
+
   get 'classrooms/index'
 
   get 'classrooms/show'
@@ -34,7 +44,7 @@ Rails.application.routes.draw do
   root to: 'users#index'
 
   #resources
-  resources :users, :classrooms # or resource :user for singular resources
+  resources :users, :classrooms, :documents # or resource :user for singular resources
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

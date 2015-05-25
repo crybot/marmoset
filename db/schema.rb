@@ -11,13 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150522235221) do
+ActiveRecord::Schema.define(version: 20150524233402) do
 
   create_table "classrooms", force: :cascade do |t|
     t.text     "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "classrooms_documents", id: false, force: :cascade do |t|
+    t.integer "classroom_id"
+    t.integer "document_id"
+  end
+
+  add_index "classrooms_documents", ["classroom_id"], name: "index_classrooms_documents_on_classroom_id"
+  add_index "classrooms_documents", ["document_id"], name: "index_classrooms_documents_on_document_id"
 
   create_table "classrooms_users", id: false, force: :cascade do |t|
     t.integer "user_id"
@@ -26,6 +34,17 @@ ActiveRecord::Schema.define(version: 20150522235221) do
 
   add_index "classrooms_users", ["classroom_id"], name: "index_classrooms_users_on_classroom_id"
   add_index "classrooms_users", ["user_id"], name: "index_classrooms_users_on_user_id"
+
+  create_table "documents", force: :cascade do |t|
+    t.integer  "classroom_id"
+    t.string   "name"
+    t.text     "content"
+    t.string   "author_email"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "documents", ["classroom_id"], name: "index_documents_on_classroom_id"
 
   create_table "users", force: :cascade do |t|
     t.text     "name"
