@@ -35,4 +35,5 @@ bower.json
 .powenv
 
 # Ignore vim buffered swap files
-.swp
+*.swp
+*.swo
