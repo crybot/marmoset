@@ -1,5 +1,6 @@
 class ClassroomsController < ApplicationController
   def index
+    @classrooms = Classroom.all
   end
 
   def show
@@ -7,18 +8,28 @@ class ClassroomsController < ApplicationController
     save_classroom(@classroom)
   end
 
-  def new
-  end
-
   def create
     @classroom = Classroom.new(classroom_params)
     if @classroom.save
       current_user.classrooms << @classroom
-      flash[:success] = 'Classroom created sucessfully!'
+      flash[:success] = 'Classroom successfully created!'
     else
       flash[:danger] = 'Classroom could not be created.'
     end
     redirect_to current_user
+  end
+
+  def associate
+    @classroom = Classroom.find(params[:id])
+    unless @classroom.nil? || current_user.classrooms.include?(@classroom)
+      current_user.classrooms << @classroom 
+      flash[:success] = 'Classroom successfully joined!'
+      redirect_to @classroom
+    else
+      flash[:danger] = 'Already joined or unexisting classroom.'
+      redirect_to classrooms_path
+    end
+
   end
 
   def destroy

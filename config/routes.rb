@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   get 'documents/new'
 
   #classrooms
+  get 'classrooms/index'
   get 'classrooms/show'
+  get 'classrooms/associate'
   
   #users 
   get 'users/index'

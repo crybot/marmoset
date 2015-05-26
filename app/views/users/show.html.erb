@@ -1,4 +1,4 @@
-<h1> Welcome <%= current_user.name %> ! </h1>
+<h1> Welcome <%= current_user.name %>! </h1>
 
 <%= link_to classrooms_path, title: "Join Classroom", class: "btn btn-lg btn-primary", id: "newClass" do %>
   <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
@@ -7,13 +7,6 @@
 <%= render 'shared/drop_down_form' %>
 
 <div class="row">
-  <% current_user.classrooms.each do |class_room| %>
-    <%= link_to class_room, title: "Enter classroom", class: "class center btn btn-lg btn-success" do %>
-      <span class="glyphicon glyphicon-book" aria-hidden="true"></span> 
-      <br>
-      <br>
-      <%= class_room.name %>
-    <% end %>
-  <% end %>
+  <%= render current_user.classrooms %>
 </div>
 

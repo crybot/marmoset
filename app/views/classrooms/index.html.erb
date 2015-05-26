@@ -1,2 +1,13 @@
-<h1>Classrooms#index</h1>
-<p>Find me in app/views/classrooms/index.html.erb</p>
+<h1> Currently available classrooms </h1>
+
+<div class="row">
+  <% @classrooms.each do |classroom| %>
+    <%= link_to classrooms_associate_path(id: classroom.id), title: "Enter classroom", class: "box center btn btn-lg btn-success" do %>
+      <span class="glyphicon glyphicon-book" aria-hidden="true"></span> 
+      <span>
+	<%= classroom.name %>	
+      </span>
+    <% end %>
+  <% end %>
+</div>
+
