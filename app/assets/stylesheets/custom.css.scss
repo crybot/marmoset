@@ -254,3 +254,12 @@ ul {
   transition: 0.9s ease-in-out left;
 }
 
+#editButton {
+  float: right;
+  margin-top: 40px;
+}
+
+textarea {
+  min-height: 600px;
+  resize: vertical;
+}

@@ -1,15 +1,3 @@
-<h1> Document online editor </h1>
+<h1> Document online editor (new)</h1>
 
-<%= form_for @document, :html => {class: "form-horizontal center"} do |f| %>
-
-    <div class="form-group">
-      <%= f.text_field :name, class: "form-control", placeholder: "Document name" %>
-    </div>
-
-    <div class="form-group">
-      <%= f.text_area :content, class: "form-control", placeholder: "Content" %>
-    </div>
-
-    <%= f.submit "Save document", class: "btn btn-lg btn-primary" %>
-
-<% end %>
+<%= render 'shared/editor' %>

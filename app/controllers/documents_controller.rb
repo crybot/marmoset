@@ -11,13 +11,29 @@ class DocumentsController < ApplicationController
     @document = current_classroom.documents.build(document_params)
     if @document.save
       flash[:success] = 'Document successfully created!'
+      redirect_to current_classroom
     else
-      flash[:danger] = 'Document could not be created.'
+      flash.now[:danger] = 'Document could not be created.'
+      render 'new'
     end
-    redirect_to current_classroom
   end
 
   def destroy
+  end
+
+  def edit
+    @document = Document.find(params[:id])
+  end
+
+  def update
+    @document = Document.find(params[:id])
+    if @document.update_attributes(document_params)
+      flash[:success] = 'Document successfully updated!'
+      redirect_to @document.classroom
+    else
+      flash.now[:danger] = 'Cannot update document.'
+      render 'edit'
+    end
   end
 
   def document_params
