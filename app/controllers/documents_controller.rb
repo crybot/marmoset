@@ -30,7 +30,10 @@ class DocumentsController < ApplicationController
 
   def update
     @document = Document.find(params[:id])
+    old_path = path(@document)
     if @document.update_attributes(document_params)
+      update_file(old_path, @document)
+
       flash[:success] = 'Document successfully updated!'
       redirect_to @document.classroom
     else

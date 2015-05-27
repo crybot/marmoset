@@ -6,6 +6,11 @@ module DocumentsHelper
     File.write(path(document), document.content)
   end
 
+  def update_file(old_path, new_document)
+    File.delete old_path
+    File.write path(new_document), new_document.content
+  end
+
   def read_file(document)
     File.read(path(document))
   end
