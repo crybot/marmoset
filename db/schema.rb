@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150525192758) do
+ActiveRecord::Schema.define(version: 20150527152408) do
 
   create_table "classrooms", force: :cascade do |t|
     t.text     "name"
@@ -38,10 +38,10 @@ ActiveRecord::Schema.define(version: 20150525192758) do
   create_table "documents", force: :cascade do |t|
     t.integer  "classroom_id"
     t.string   "name"
-    t.text     "content"
     t.string   "author_email"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.text     "content"
   end
 
   add_index "documents", ["classroom_id"], name: "index_documents_on_classroom_id"

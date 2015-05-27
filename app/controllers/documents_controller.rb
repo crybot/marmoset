@@ -1,6 +1,7 @@
 class DocumentsController < ApplicationController
   def show
     @document = Document.find(params[:id])
+    @content = read_file(@document)
   end
 
   def new
@@ -10,6 +11,8 @@ class DocumentsController < ApplicationController
   def create
     @document = current_classroom.documents.build(document_params)
     if @document.save
+      create_and_write_file(@document) #create and store local file
+
       flash[:success] = 'Document successfully created!'
       redirect_to current_classroom
     else
