@@ -39,4 +39,4 @@ bower.json
 *.swo
 
 # Ignore /uploads files
-/uploads/*
+# /uploads/*
