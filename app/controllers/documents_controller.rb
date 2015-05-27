@@ -1,4 +1,6 @@
 class DocumentsController < ApplicationController
+  before_action :logged_user, only: [:new, :create, :destroy, :edit, :update]
+
   def show
     @document = Document.find(params[:id])
     @content = read_file(@document)
@@ -42,6 +44,7 @@ class DocumentsController < ApplicationController
     end
   end
 
+  private
   def document_params
     params.require(:document).permit(:name, :content)
   end

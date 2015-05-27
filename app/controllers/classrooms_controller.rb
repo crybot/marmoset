@@ -1,4 +1,7 @@
 class ClassroomsController < ApplicationController
+  before_action :logged_user
+  before_action :right_user, only: [:show]
+
   def index
     @classrooms = Classroom.all
   end
@@ -39,4 +42,13 @@ class ClassroomsController < ApplicationController
   def classroom_params
     params.require(:classroom).permit(:name)
   end
+
+  def right_user
+    @classroom = Classroom.find(params[:id])
+    unless current_user.classrooms.include?(@classroom)
+      flash[:danger] = "You are not member of this class."
+      redirect_to current_user
+    end
+  end
+
 end

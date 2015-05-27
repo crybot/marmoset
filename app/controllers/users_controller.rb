@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  before_action :logged_user, only: [:show]
+  before_action :right_user, only: [:show]
+
   def index
     @user_list = User.all 
   end
@@ -30,6 +33,14 @@ class UsersController < ApplicationController
   private
   def user_params
     params.require(:user).permit(:name, :surname, :email, :password)
+  end
+
+  def right_user
+    @user = User.find(params[:id])
+    unless @user == current_user
+      flash[:danger] = "You do not have permissions to access this page."
+      redirect_to current_user
+    end
   end
 
 end
