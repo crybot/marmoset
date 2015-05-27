@@ -1,4 +1,4 @@
-require 'rugged'
+#require 'rugged'
 module Versioning
 
   module Git
