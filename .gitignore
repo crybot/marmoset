@@ -37,3 +37,6 @@ bower.json
 # Ignore vim buffered swap files
 *.swp
 *.swo
+
+# Ignore /uploads files
+/uploads
