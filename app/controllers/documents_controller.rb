@@ -1,5 +1,5 @@
 class DocumentsController < ApplicationController
-  include Git
+  #include Git
   before_action :logged_user, only: [:new, :create, :destroy, :edit, :update]
 
   def show

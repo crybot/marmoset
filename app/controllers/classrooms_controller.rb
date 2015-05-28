@@ -1,5 +1,5 @@
 class ClassroomsController < ApplicationController
-  include Git
+  #include Git
   before_action :logged_user
   before_action :right_user, only: [:show]
 
