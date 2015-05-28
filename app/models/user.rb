@@ -12,9 +12,8 @@ class User < ActiveRecord::Base
 
   # Returns true if the given token matches the digest.
   def authenticated?(attribute, token)
-    digest = send("#{attribute}_digest")
-    return false if digest.nil?
-    BCrypt::Password.new(digest).is_password?(token)
+    return false if activation_digest.nil?
+    BCrypt::Password.new(activation_digest).is_password?(token)
   end
 
   def User.new_token
@@ -22,8 +21,7 @@ class User < ActiveRecord::Base
   end
 
   def User.digest(string)
-    cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
-      BCrypt::Engine.cost
+    cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost
     BCrypt::Password.create(string, cost: cost)
   end
 
