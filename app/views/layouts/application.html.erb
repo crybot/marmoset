@@ -10,13 +10,13 @@
   <body>
     <header class="navbar navbar-fixed-top navbar-inverse">
       <div class="container">
-	<%= link_to root_path, id: "logo" do  %>
+	<%= link_to logged? ? current_user : '/', id: "logo" do  %>
 	  <span class="glyphicon glyphicon-pencil"></span> Marmoset
 	<% end %>
 
 	<nav>
 	  <ul class="nav navbar-nav navbar-right">
-	    <li><%= link_to "Home",   '/' %></li>
+	    <li><%= link_to "Home",   logged? ? current_user : '/' %></li>
 	    <li><%= link_to "Help",   '#' %></li>
 	    <% if logged? %>
 	      <%= render 'shared/dropdown' %>
@@ -36,8 +36,11 @@
 
       <%= yield %>
 
-      <footer class="navbar navbar-default navbar-static-bottom">
+      <div class="bottom-logo center">
 	<%= image_tag "monkey.jpg", class: "monkey" %>
+      </div>
+
+      <footer class="footer ">
       </footer>
 
     </div>

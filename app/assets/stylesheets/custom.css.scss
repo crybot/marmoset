@@ -87,9 +87,6 @@ p{
 
 /* footer */
 
-footer {
-  height: 100%;
-}
 
   /* miscellaneous */
 
@@ -249,10 +246,19 @@ textarea {
   margin-top: 100px;
 }
 
-.navbar-default {
+.bottom-logo {
   margin-top: 120px;
   background-color: transparent;
   border-color: transparent;
   color: white;
 }
 
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #166590;
+  height: 15px;
+  left: 0;
+}
