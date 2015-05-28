@@ -3,8 +3,11 @@
 <p>Hi <%= @user.name %>,</p>
 
 <p>
-Welcome to the Sample App! Click on the link below to activate your account:
+Welcome to Marmoset!
+<br></br>
+Please click on the following link to activate your account:
 </p>
 
 <%= link_to "Activate", edit_account_activation_url(@user.activation_token, email: @user.email) %>
 
+<h3> N.B. DO NOT REPLY TO THIS EMAIL </h3>
