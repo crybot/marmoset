@@ -8,7 +8,7 @@ module SessionsHelper
   end
 
   def redirect_forward_or(default)
-    redirect_to session[:forward_url] or default
+    redirect_to (session[:forward_url] or default)
     session.delete(:forward_url)
   end
 

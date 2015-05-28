@@ -1,4 +1,5 @@
 class DocumentsController < ApplicationController
+  include Git
   before_action :logged_user, only: [:new, :create, :destroy, :edit, :update]
 
   def show
@@ -14,6 +15,7 @@ class DocumentsController < ApplicationController
     @document = current_classroom.documents.build(document_params)
     if @document.save
       create_and_write_file(@document) #create and store local file
+      #add_file(normalize(@document.name), normalize(@document.content))
 
       flash[:success] = 'Document successfully created!'
       redirect_to current_classroom

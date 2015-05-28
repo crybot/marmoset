@@ -1,4 +1,5 @@
 class ClassroomsController < ApplicationController
+  include Git
   before_action :logged_user
   before_action :right_user, only: [:show]
 
@@ -14,6 +15,7 @@ class ClassroomsController < ApplicationController
   def create
     @classroom = Classroom.new(classroom_params)
     if @classroom.save
+      #create_repo(normalize(@classroom.name))
       current_user.classrooms << @classroom
       flash[:success] = 'Classroom successfully created!'
     else

@@ -1,12 +1,10 @@
-#require 'rugged'
+require 'rugged'
 module Versioning
-
   module Git
-
     attr_accessor :repo
-
+    
     def create_repo(name)
-      repo = Rugged::Repository.init_at('/' + name, :bare)
+      repo = Rugged::Repository.init_at('uploads/' + name, :bare)
       return repo
     end
 
